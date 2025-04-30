@@ -1,0 +1,63 @@
+<section
+  class="container text-center"
+  *ngIf="AlloRderKitchen.length; else name"
+>
+  <div class="row content">
+    <div class="col-md-4 box" *ngFor="let item of AlloRderKitchen">
+      <section class="Orders">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+
+              <th>quantity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let orderItem of item.orderItems">
+              <td>{{ orderItem.item.name }}</td>
+              <td>{{ orderItem.quantity }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="bottomTable">
+          <div class="btnorders">
+            <button (click)="DeletKitchen(item.id)">Done</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+
+<div class="create">
+  <div class="overlay">
+    <p>
+      back<br />
+      orders
+    </p>
+  </div>
+
+  <div>
+    <button class="btn-up" routerLink="/Orders">
+      <i
+        class="fa-sharp fa-solid fa-circle-chevron-left"
+        style="font-size: xx-large"
+      ></i>
+    </button>
+  </div>
+</div>
+<ng-template #name>
+  <h2
+    class="text-center"
+    style="
+      margin-top: 50px;
+      color: #1ac239;
+      font-size: 45px;
+      line-height: 0cqmax;
+    "
+  >
+    there is no order in Kitchen .....
+  </h2>
+</ng-template>

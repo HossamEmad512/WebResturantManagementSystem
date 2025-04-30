@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Lexend+Giga:wght@100..900&family=Noto+Serif+Todhri&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Smooch+Sans:wght@100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  margin-top: 0px;
+  box-sizing: border-box;
+}
+body {
+  background-color: #f2f2f2;
+}
+.createform {
+  margin-left: 20%;
+  width: 700px;
+}
+.formtextcenter {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.formtextcenter h1 {
+  margin-right: 10px;
+  width: 480px;
+  justify-content: center;
+  align-items: center;
+
+  color: #000000;
+  font-weight: 400;
+  font-size: 40px;
+  border: 1px transparent;
+  box-shadow: -5px -5px 10px 0 #bfbfbf;
+}
+.label {
+  font-weight: 400;
+  display: inline-block;
+  width: 100px;
+  font-family: "Lexend Giga", serif;
+  font-size: 30px;
+  line-height: 36.13px;
+  margin-bottom: 12px;
+  color: #000000;
+}
+.createform input {
+  display: inline-block;
+  margin-left: 0px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  height: 50px;
+  background-color: #bfbfbf;
+  width: 80%;
+}
+.createform .erro {
+  margin-top: 10px;
+  margin-left: 200px;
+  width: 250px;
+  height: 50px;
+  text-align: center;
+}
+.btn-main {
+  background-color: #1ac239;
+  padding: 8px 33px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+.btn-main1 {
+  background-color: #bfbfbf;
+  padding: 8px 33px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  color: #000000;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 15px;
+  cursor: pointer;
+  margin-left: 400px;
+}
+.buttons {
+  display: flex;
+  margin-left: 100px;
+}
+.formtextcenter button {
+  margin-top: 30px;
+  margin-left: 40px;
+}
+@media screen and (max-width: 1200px) {
+  .formtextcenter form {
+    margin-right: 150px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .btn-main {
+    padding: 7px 14px;
+  }
+  .btn-main1 {
+    padding: 7px 14px;
+  }
+  .formtextcenter button {
+    margin-left: 20px;
+  }
+  .formtextcenter {
+    margin-left: 80px;
+  }
+  .create .erro {
+    margin-left: 80px;
+  }
+  .formtextcenter form {
+    margin-right: -40px;
+  }
+
+  .create input {
+    width: 450px;
+  }
+  .buttons {
+    margin-left: 90px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .btn-main {
+    padding: 4px 10px;
+  }
+  .btn-main1 {
+    padding: 4px 10px;
+  }
+  .formtextcenter form {
+    margin-right: -100px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .btn-main {
+    padding: 4px 10px;
+  }
+  .btn-main1 {
+    padding: 4px 10px;
+  }
+  .create input {
+    width: 300px;
+  }
+  .buttons {
+    margin-left: 20px;
+  }
+  .formtextcenter form {
+    margin-right: 30px;
+  }
+  .formtextcenter {
+    margin-left: 80px;
+  }
+  .create .erro {
+    margin-left: 10px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .create input {
+    width: 200px;
+  }
+  .btn-main {
+    padding: 4px 4;
+  }
+  .btn-main1 {
+    padding: 4px 4x;
+  }
+  .buttons {
+    margin-left: -20px;
+  }
+}

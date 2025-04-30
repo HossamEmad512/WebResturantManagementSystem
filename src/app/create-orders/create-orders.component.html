@@ -1,0 +1,88 @@
+<section class="oRderParent">
+  <div *ngIf="Allmenus">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let item of Allmenus">
+        <div class="AddItemesToOrders">
+          <form action="" [formGroup]="formgrioup">
+            <span> {{ item.name }}</span>
+
+            <span>{{ item.price | currency : "EGP" }}</span>
+
+            <div class="Btn-order">
+              <div class="InputofQuantity">
+                <label for="quantity" style="margin-left: 15px; padding: 6px"
+                  >Quantity</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  style="width: 70px"
+                  formControlName="quantity"
+                />
+              </div>
+
+              <button
+                type="submit"
+                (click)="addOrderDetails(item)"
+                class="orderitem"
+              >
+                order Item
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="btnorders">
+        <button (click)="showForm()" class="orderitem1">createOrders</button>
+        <button
+          class="orderitem1"
+          style="background-color: #4866dc"
+          routerLink="/Orders"
+        >
+          Back To list
+        </button>
+      </div>
+
+      <!-- النافذة المنبثقة -->
+      <form action="" [formGroup]="formGeroup">
+        <div class="popup" *ngIf="isFormVisible">
+          <div class="popup-content">
+            <h2>Enter your Data</h2>
+            <table *ngIf="orderItems.length > 0">
+              <thead>
+                <tr>
+                  <th>name</th>
+                  <th>price</th>
+                  <th>Quantity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let user of orderItems">
+                  <td>{{ user.item.name }}</td>
+                  <td>{{ user.item.price }}</td>
+                  <td>{{ user.quantity }}</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <label>Number of Table:</label>
+            <input
+              type="number"
+              formControlName="tableNumber"
+              class="form-control"
+            />
+
+            <div class="actions">
+              <button type="submit" (click)="submitForm()">Save</button>
+              <button (click)="closeForm()">close</button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <!-- تغطية الخلفية -->
+      <div class="overlay" *ngIf="isFormVisible" (click)="closeForm()"></div>
+    </div>
+  </div>
+</section>

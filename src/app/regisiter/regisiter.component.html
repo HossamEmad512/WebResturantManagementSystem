@@ -1,0 +1,104 @@
+
+<div class="container">
+    <div class="super">
+            
+       <div class="superparent">
+        <form [formGroup]="formgrioup" (ngSubmit)="hellwo()">
+               
+                
+            <div class="parent">
+                <h1>register</h1>
+                
+                    
+                    <div class="Regisiter">
+                       <div class="child">
+                        <label for="email">email</label>
+                        <input type="email" id="email" class="form-control" formControlName="email">
+            
+                       </div>
+                        <div class="div alert alert-danger  mx-auto"  *ngIf="formgrioup.get('email')?.errors && formgrioup.get('email')?.touched" >
+                            <p *ngIf="formgrioup.get('email')?.getError('required')" >email is required</p>
+                            <p *ngIf="formgrioup.get('email')?.getError('email')"> email is notvalid</p>
+                           
+                        </div>
+                    </div>
+                    <div class="Regisiter" style="margin-right: 2px;">
+                        <div class="child">
+                         <label for="displayName">Name</label>
+                         <input type="displayName" id="displayName" class="form-control" formControlName="displayName">
+             
+                        </div>
+                         <div class="div alert alert-danger  mx-auto"  *ngIf="formgrioup.get('displayName')?.errors && formgrioup.get('displayName')?.touched" >
+                             <p *ngIf="formgrioup.get('displayName')?.getError('required')" >displayName is required</p>
+                             
+                            
+                         </div>
+                     </div>
+                     <div class="Regisiter" style="margin-right: 55px;">
+                        <div class="child">
+                         <label for="phoneNumber" id="phoneNumber">phone-Number</label>
+                         <input type="phoneNumber"  class="form-control" formControlName="phoneNumber">
+             
+                        </div>
+                         <div class="div alert alert-danger  mx-auto"  *ngIf="formgrioup.get('phoneNumber')?.errors && formgrioup.get('phoneNumber')?.touched" >
+                             <p *ngIf="formgrioup.get('phoneNumber')?.getError('required')" >phoneNumber is required</p>
+                             
+                            
+                         </div>
+                     </div>
+                     <div class="Regisiter" style="margin-right: 15px;">
+                        <div class="child">
+                         <label for="password">password</label>
+                         <input type="password" id="password" class="form-control" formControlName="password">
+             
+                        </div>
+                         <div class="div alert alert-danger  mx-auto"  *ngIf="formgrioup.get('password')?.errors && formgrioup.get('password')?.touched" >
+                             <p *ngIf="formgrioup.get('password')?.getError('required')" >password is required</p>
+                             
+                            
+                         </div>
+                     </div>
+                     <div class="Regisiter" >
+                        <div class="form-check d-flex">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Are you Owner?
+                                </label>
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" formControlName="role" value="Owner">
+                            
+                         <div class="div alert alert-danger  mx-auto"  *ngIf="formgrioup.get('role')?.errors && formgrioup.get('role')?.touched" >
+                            <p *ngIf="formgrioup.get('role')?.getError('required')" >role is required</p>
+                            
+                           
+                        </div>
+                            
+                          </div>
+
+
+                        
+                     </div>
+
+                     
+
+                     <div class="Regisiter mb-3" >
+                        <button   class="btn-main d-block mx-auto mb-3">confirm</button>  
+                     </div>
+              </div>
+             
+              
+          </form>
+       
+       </div>
+            
+            
+            <div class="superparent">
+                
+               <div class="imagehover">
+                <picture> <img src="./assets/imges/hero-img.png" alt="" ></picture>
+               </div>
+        
+            </div>
+          
+       
+    </div>
+
+</div>

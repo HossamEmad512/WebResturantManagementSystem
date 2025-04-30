@@ -1,0 +1,46 @@
+<section *ngIf="TOTAL;else name">
+  <table >
+    <thead>
+      <tr>
+       
+        <th>order Number</th>
+        <th>TOTal Cost</th>
+        <th>Total Price</th>
+      
+
+       
+        <th> Profit</th>
+       
+      </tr>
+    </thead>
+    <tbody >
+      <tr  *ngFor="let item of TOTAL.orders;let i='index'"  >
+        <td  >{{i+1}}</td>  <!-- رقم الصف يبدأ من 1 -->
+       
+        <td>{{item.totalCost}}</td>
+     
+          
+        <td>{{item.totalPrice}}</td>
+        <td>{{item.totalPrice-item.totalCost}}</td>
+       
+      </tr>
+  
+      
+    
+        </tbody>
+        
+      
+  </table>
+  <div class="bottomTable">
+    <span>TOTAL cost:{{TOTAL.totalCost}}</span><br>
+    <span>Total Price:{{TOTAL.totalPrice}}</span><br>
+    <span> profit:{{TOTAL.totalProfit}}</span><br>
+ 
+   </div>
+</section>
+
+ <ng-template   #name> <h2 class="text-center">
+orders is  empty .....
+</h2>
+  
+ </ng-template>

@@ -1,0 +1,60 @@
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 30px;
+    margin-top: 40px;
+   
+    /* لجعل الحدود متصلة */
+  }
+  th, td {
+    border: 2px solid #4a4a4a; /* لون الحدود */
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px; /* تدوير الحواف */
+  }
+  th {
+    background-color: #CAD8CD;
+    font-style: italic;
+  font-weight: 400;
+  font-size: 22px;
+  
+  text-align: center;
+  color: #000;
+  
+  }
+  
+  /* ✨ إخفاء بعض الحدود ✨ */
+  tr:first-child th {
+    border-top: none; /* إخفاء الحد العلوي */
+  }
+  tr:last-child th {
+    border-top: none; 
+   /* إخفاء الحد العلوي */
+  }
+  tr td:first-child, tr th:first-child {
+    border-left: none;
+    border-bottom: none; /* إخفاء الحد الأيسر */
+  }tr th:last-child{
+    border-right: none;
+  
+  }
+  tr:last-child td {
+    border-bottom: none; /* إخفاء الحد السفلي في آخر صف */
+  }
+  tr td:last-child {
+    border-right: none;
+     /* إخفاء الحد الأيمن */
+  }.bottomTable{
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    
+    
+   
+  
+  }.bottomTable span{
+    font-size: 25px;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: italic;
+  
+  }

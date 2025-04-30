@@ -1,0 +1,33 @@
+<section>
+  <div *ngIf="GetAllMenue; else name">
+    <div class="row content">
+      <div class="col-md-4" *ngFor="let item of GetAllMenue">
+        <div class="childmenue" style="margin-left: 10px">
+          <h1>
+            <span> {{ item.name }}</span>
+          </h1>
+
+          <span>{{ item.price | currency : "EGP" }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="create" *ngIf="role == 'Owner'">
+  <div class="overlay">
+    <p>
+      create<br />
+      Menu
+    </p>
+  </div>
+
+  <div>
+    <button class="btn-up" [routerLink]="['/creatmenue', getmenueid]">
+      <i class="fa-solid fa-plus"></i>
+    </button>
+  </div>
+</div>
+<ng-template class="mj" #name>
+  <h2 class="text-center">menu is empty .....</h2>
+</ng-template>

@@ -1,0 +1,143 @@
+.nav {
+  width: 10% !important;
+}
+
+.btn {
+  padding: 10px 12px;
+  border-radius: 50px;
+  background-color: #1ac239;
+  align-items: center;
+
+  font-size: 22px;
+  font-weight: 900;
+  font-style: italic;
+  color: #fff;
+  border: none;
+}
+.btncreate {
+  display: flex;
+  justify-content: center;
+}
+
+.popup {
+  border-radius: 8px;
+  margin-top: 40px;
+  padding-right: 50px;
+  width: 90% !important;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.actions button {
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.actions button:last-child {
+  background-color: #f44336;
+  color: white;
+}
+
+table {
+  width: 100%;
+}
+
+table,
+th,
+td {
+  border: 1px solid #ddd;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #007bff;
+  color: white;
+}
+
+.create .btn-up {
+  border: transparent;
+  right: 10px;
+  bottom: 10px;
+
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: aliceblue;
+  background-color: #67c100;
+  transition: all 4s;
+}
+.create .hover p {
+  font-weight: 700;
+  display: none;
+  position: fixed;
+  right: 80px;
+  bottom: 5px;
+
+  margin-top: 5px;
+  font-style: italic;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.823);
+}
+.create:hover .hover p {
+  display: flex;
+  color: #67c100;
+}
+.message {
+  margin-top: 60px;
+  text-align: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1200px) {
+  .popup {
+    margin-top: 40px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .btn {
+    padding: 10px;
+  }
+
+  th,
+  td {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .popup {
+    margin-top: 50px;
+  }
+  th,
+  td {
+    font-size: 10px;
+  }
+  .btn {
+    padding: 4px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .popup {
+    margin-top: 250px;
+  }
+  th,
+  td {
+    font-size: 8px;
+  }
+  .btn {
+    padding: 4px;
+  }
+}

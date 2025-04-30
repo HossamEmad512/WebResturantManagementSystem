@@ -1,0 +1,65 @@
+<section *ngIf="AllOrders; else name">
+  <div class="row content">
+    <div class="col-md-4 box" *ngFor="let item1 of TotalAllorders">
+      <section class="Orders">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+
+              <th>Price</th>
+              <th>quantity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let orderItem of item1.orderItems">
+              <td>{{ orderItem.item.name }}</td>
+
+              <td>{{ orderItem.item.price }}</td>
+              <td>{{ orderItem.quantity }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="bottomTable">
+          <span>Number Table:{{ item1.tableNumber }}</span
+          ><br />
+          <span>TOTAL Price:{{ Getsum(item1.orderItems) }}</span>
+
+          <div class="btnorders">
+            <button (click)="creatsales(item1, item1.id)">sold</button>
+            <button style="background-color: red" (click)="Delet(item1.id)">
+              Delete
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>
+
+<div class="create" routerLink="/CreateOrders">
+  <div class="overlay">
+    <p>
+      create<br />
+      orders
+    </p>
+  </div>
+
+  <div>
+    <button class="btn-up"><i class="fa-solid fa-plus"></i></button>
+  </div>
+</div>
+<ng-template #name>
+  <h2
+    class="text-center"
+    style="
+      margin-top: 50px;
+      color: #1ac239;
+      font-size: 45px;
+      line-height: 0cqmax;
+    "
+  >
+    orders is empty .....
+  </h2>
+</ng-template>

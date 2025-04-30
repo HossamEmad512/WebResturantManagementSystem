@@ -1,0 +1,72 @@
+<div class="row">
+  <div class="col-md-3 nav">
+    <app-navbarmene></app-navbarmene>
+  </div>
+
+  <div class="popup col-md-8" *ngIf="AllResponse.length; else name">
+    <div class="popup-content">
+      <table>
+        <thead>
+          <tr>
+            <th>category</th>
+
+            <th>cost_price</th>
+            <th>Country</th>
+
+            <th>Name</th>
+            <th>Preparation Method</th>
+
+            <th>Rating</th>
+            <th>Selling Price (EGP)</th>
+            <th>Save</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let recommendation of AllResponse">
+            <td>{{ recommendation.category }}</td>
+
+            <td>{{ recommendation.cost }}</td>
+            <td>{{ recommendation.country }}</td>
+
+            <td>{{ recommendation.name }}</td>
+            <td>{{ recommendation.prepMethod }}</td>
+
+            <td>{{ recommendation.rating }}</td>
+            <td>{{ recommendation.price }}</td>
+            <td>
+              <button
+                (click)="DeletItem(recommendation)"
+                style="background-color: brown"
+                class="btn"
+              >
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<ng-template #name>
+  <h2 class="text-center message" style="color: #1ac239">
+    There is<br />
+    no Recommendations .....
+  </h2>
+</ng-template>
+
+<div class="create">
+  <div class="hover">
+    <p>
+      <br />
+      Create Recommendations
+    </p>
+  </div>
+
+  <div routerLink="/Recommendation">
+    <button class="btn-up">
+      <i class="fa-solid fa-plus" style="font-size: xx-large"></i>
+    </button>
+  </div>
+</div>

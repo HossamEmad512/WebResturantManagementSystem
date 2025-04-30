@@ -1,0 +1,48 @@
+<section *ngIf="AllEmplyee.length; else name">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">password</th>
+
+        <th *ngIf="role == 'Owner'" scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of AllEmplyee; let i = index">
+        <td>{{ item.name }}</td>
+
+        <td>{{ item.email }}</td>
+        <td>{{ item.password }}</td>
+
+        <td *ngIf="role == 'Owner'">
+          <button class="btn1" (click)="DeleteEmplyee(item.email)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+    <div class="bottonEmplyee"></div>
+  </table>
+</section>
+
+<div *ngIf="role == 'Owner'" class="create">
+  <div class="overlay">
+    <p>
+      <br />
+      Create Emplyee
+      <br />
+      Account .....
+    </p>
+  </div>
+
+  <div>
+    <button class="btn-up" routerLink="/EmplyeeAccount">
+      <i class="fa-solid fa-plus"></i>
+    </button>
+  </div>
+</div>
+<ng-template class="mj" #name>
+  <h2 class="text-center" style="color: #1ac239">there is no Emplyee .....</h2>
+</ng-template>

@@ -1,0 +1,100 @@
+<section class="formtextcenter">
+  <form class="mt-4" [formGroup]="formgrioup" id="myForm">
+    <div class="createform">
+      <div class="mt-5">
+        <label class="label" for="resturantName"> Name</label>
+        <input
+          #myinput
+          type="text"
+          class="form-control"
+          [ngModel]="user.name"
+          formControlName="name"
+        />
+
+        <div
+          class="alert alert-danger erro"
+          *ngIf="
+            formgrioup.get('name')?.errors && formgrioup.get('name')?.touched
+          "
+        >
+          <p *ngIf="formgrioup.get('name')?.getError('required')">
+            name is required
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-5">
+        <label class="label" for="resturantName">cost</label>
+        <input
+          #myinput
+          type="text"
+          class="form-control"
+          [ngModel]="user.cost"
+          formControlName="cost"
+        />
+        <div
+          class="alert alert-danger erro"
+          *ngIf="
+            formgrioup.get('cost')?.errors && formgrioup.get('cost')?.touched
+          "
+        >
+          <p *ngIf="formgrioup.get('cost')?.getError('required')">
+            cost is required
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-5">
+        <label class="label" for="resturantName">price</label>
+        <input
+          #myinput
+          type="text"
+          class="form-control"
+          [ngModel]="user.price"
+          formControlName="price"
+        />
+        <div
+          class="alert alert-danger erro #hidden"
+          *ngIf="
+            formgrioup.get('price')?.errors && formgrioup.get('price')?.touched
+          "
+        >
+          <p *ngIf="formgrioup.get('price')?.getError('required')">
+            price is required
+          </p>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button
+          type="submit"
+          [disabled]="formgrioup.invalid"
+          (click)="addmenuedetails()"
+          class="btn-main"
+        >
+          Add item
+        </button>
+        <button type="submit" (click)="addmenue()" class="btn-main">
+          Save Menu
+        </button>
+      </div>
+    </div>
+  </form>
+  <div class="create">
+    <div class="overlay">
+      <p>
+        <br />
+        Back TO Menue
+      </p>
+    </div>
+
+    <div>
+      <button class="btn-up" [routerLink]="['/Menu', idrestaurant]">
+        <i
+          class="fa-sharp fa-solid fa-circle-chevron-left"
+          style="font-size: xx-large"
+        ></i>
+      </button>
+    </div>
+  </div>
+</section>

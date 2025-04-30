@@ -1,0 +1,94 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Lexend+Giga:wght@100..900&family=Noto+Serif+Todhri&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Smooch+Sans:wght@100..900&display=swap');
+.container h1{
+    
+    margin-top: 30px;
+    width: 430px;
+    height: 45px;
+    justify-content: center;
+    align-items: center;
+   
+    box-shadow: -5px -5px 10px 0 #BFBFBF;
+   
+    
+    color: #000000;
+    font-weight: 800;
+    font-size: 35px;
+    border: 1px transparent;
+   
+}
+.label{
+    font-weight: 400;
+    font-family: "Lexend Giga", serif;
+    font-size: 30px;
+    line-height: 36.13px;
+    margin-left: 30px;
+    margin-bottom: 12px;
+    color: #000000;
+    
+}.create input{
+    border-radius: 20px;
+    height: 52px;
+    background-color: #BFBFBF;
+    
+}
+.btn-main {
+    background-color: #1AC239;
+    padding: 8px 33px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+  }.btn-main1 {
+    background-color: #BFBFBF;
+    padding: 8px 33px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    color:#fff ;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 15px;
+    cursor: pointer;
+    margin-left: 400px;
+   
+  }
+  .taha1 button{
+    margin-top: 30px;
+    margin-left: 10px;
+  } @media screen and (max-width: 768px) {
+    .container h1{
+      font-size: 25px;
+      width: 300px;
+    }
+
+  }
+  @media screen and (max-width: 576px) {
+   .label{
+    font-size: 20px;
+    font-weight: bold;
+   }
+  
+  }
+  @media screen and (max-width: 400px) {
+    .buttons{
+      display: flex;
+    }
+ .btn-main{
+  padding: 10px 15px;
+ }.btn-main1{
+  padding: 11px 15px;
+ }.container h1{
+  font-size: 20px;
+  font-weight: 800;
+  width: 250px;
+ }
+
+
+
+}
+
+  

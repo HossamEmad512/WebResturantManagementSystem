@@ -1,0 +1,57 @@
+<section>
+  <div *ngIf="GetAllEmplyee.length; else name">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Salary</th>
+
+          <th scope="col">phone</th>
+          <th *ngIf="role == 'Owner'" scope="col">updata</th>
+          <th *ngIf="role == 'Owner'" scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of GetAllEmplyee; let i = index">
+          <td>{{ item.name }}</td>
+
+          <td>{{ item.salary }}</td>
+          <td>{{ item.phone }}</td>
+
+          <td *ngIf="role == 'Owner'">
+            <button class="btn1" routerLink="/updataworEmplyee">Updata</button>
+          </td>
+          <td *ngIf="role == 'Owner'">
+            <button
+              class="btn1"
+              style="background-color: red"
+              (click)="DeleteWorkEmplyee()"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+      <div class="bottonEmplyee"></div>
+    </table>
+  </div>
+</section>
+<div *ngIf="role == 'Owner'" class="create">
+  <div class="overlay">
+    <p>
+      create<br />
+      Emplyee-work
+    </p>
+  </div>
+
+  <div>
+    <button class="btn-up" routerLink="/WorkEmplyee">
+      <i class="fa-solid fa-plus"></i>
+    </button>
+  </div>
+</div>
+<ng-template class="mj" #name>
+  <h2 class="text-center" style="color: #1ac239">
+    Work Emplyee is Emptey .....
+  </h2>
+</ng-template>

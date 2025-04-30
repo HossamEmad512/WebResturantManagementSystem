@@ -1,0 +1,107 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Lexend+Giga:wght@100..900&family=Noto+Serif+Todhri&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Smooch+Sans:wght@100..900&display=swap');
+.taha1{
+    
+    margin-top: 50px;
+}.taha1 h1{
+    margin-right: 10px;
+    width: 400px;
+    justify-content: center;
+    align-items: center;
+   
+    
+    color: #000000;
+    font-weight: 800;
+    font-size: 40px;
+    border: 1px transparent;
+    box-shadow: -5px -5px 10px 0 #BFBFBF;
+}
+.label{
+    font-weight: 400;
+    font-family: "Lexend Giga", serif;
+    font-size: 30px;
+    line-height: 36.13px;
+    margin-left: 30px;
+    margin-bottom: 12px;
+    color: #000000;
+    
+}.create input{
+    border-radius: 20px;
+    height: 52px;
+    background-color: #BFBFBF;
+}
+.btn-main {
+    background-color: #BFBFBF;
+    padding: 8px 33px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 900;
+    font-style: italic;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+  }
+  .taha1 button{
+    margin-top: 30px;
+    margin-left: 10px;
+  } @media screen and (max-width: 992px) {
+    .messageErro{
+      width: 333px;
+      
+    } .taha1 h1{
+      font-size: 25px;
+      width: 300px;
+     
+  } 
+   
+  }
+  @media screen and (max-width: 768px){
+  
+    .messageErro{
+      width: 253px;
+      
+    }.taha1 h1{
+      font-size: 20px;
+      height: 40px;
+      width: 200px;
+     
+  }
+  
+  }
+  
+  @media screen and (max-width: 576px) {
+     
+    .messageErro{
+      width: 153px;
+      
+    }
+    .createbuttons{
+      display: flex;
+    }.taha1 h1{
+      font-size: 15px;
+      height: 30px;
+      width: 150px;
+      font-weight: bold;
+     
+  }.label{
+    margin-left: -10px;
+    font-size: 28px;
+  }.btn-main{
+    padding: 5px 20px;
+  }
+  
+  
+  }
+  
+  
+  @media screen and (max-width: 400px) {
+    .btn-main{
+      padding: 5px 10px;
+    }
+    .label{
+      font-size: 22px;
+      margin-left: -10px;
+    }
+  
+  }

@@ -1,0 +1,168 @@
+
+nav ul li a{
+  font-size: 17px;
+ 
+  font-weight: 600;
+  position: relative;
+}nav ul li a::before{
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: red;
+  bottom: -3px;
+  left: 0;
+  transition: all 1s;
+}nav ul li a:hover {
+  color: black;
+}
+
+nav  ul li a:hover::before {
+  width: 100%;
+}
+
+
+
+
+
+
+.Getrestanrant{
+    margin-top: 80px;
+    display: flex;
+    align-items: center;
+  
+    
+}.mirenchild p{
+  margin-left: 10px;
+  margin-top:10px ;
+  font-weight: 900;
+
+  font-size: 20px;
+
+}.mirenchild{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+}
+.Getrestanrant input{
+    border-radius: 20px;
+    height: 53px;
+    border: 2px solid rgba(255, 0, 0, 0.177);
+    
+    
+}.Getrestanrant .child input{
+ position: relative;
+}.Getrestanrant .child button{
+    position: absolute;
+}.parent input{
+    border-radius: 20px;
+    width: 800px;
+    margin-top: 35px;
+   
+    height: 38px;
+}.parent{
+    margin-top: 40px;
+    border: 2px transparent;
+    display: flex;
+    border-radius: 20px;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    box-shadow: -5px -5px 10px 5px #d9d9d9;
+}
+ .btn-main1 {
+    background-color: #c10027;
+    padding: 7px 20px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.5s;
+  }
+ .child .child1 button{
+   margin-left: 15px;
+
+  }.child button{
+    margin-left: 10px;
+  }
+ .message-length {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 300;
+    font-size: 48px;
+    font: italic;
+    color: #67C100;
+
+ }
+ @import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@100;200;300;400;500;600;700;800;900&family=Lexend+Giga:wght@100..900&family=Noto+Serif+Todhri&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Smooch+Sans:wght@100..900&display=swap');
+ .taha1{
+   
+     margin-top: 50px;
+ }.taha1 h1{
+     margin-right: 10px;
+     width: 480px;
+     justify-content: center;
+     align-items: center;
+    
+     
+     color: #000000;
+     font-weight: 400;
+     font-size: 40px;
+     border: 1px transparent;
+     box-shadow: -5px -5px 10px 0 #BFBFBF;
+ }
+ .label{
+     font-weight: 400;
+     font-family: "Lexend Giga", serif;
+     font-size: 30px;
+     line-height: 36.13px;
+     margin-left: 30px;
+     margin-bottom: 12px;
+     color: #000000;
+     
+ }.create input{
+     border-radius: 20px;
+     height: 52px;
+     background-color: #BFBFBF;
+ }
+ .btn-main {
+     background-color: #1AC239;
+     padding: 8px 33px;
+     border: 1px solid #ccc;
+     border-radius: 10px;
+     color: #fff;
+     font-weight: 900;
+     font-style: italic;
+     font-size: 15px;
+     cursor: pointer;
+     transition: background-color 0.5s;
+   }.btn-main1 {
+     background-color: #c10027;
+     padding: 8px 22px;
+     border: 1px solid #ccc;
+     border-radius: 50%;
+     color:#000000 ;
+     font-weight: 900;
+     font-style: italic;
+     font-size: 15px;
+     cursor: pointer;
+     margin-left: 400px;
+    
+   }
+  
+  
+  
+  
+
+@media screen and (max-width: 576px) {
+  .child .child1{
+    display: flex;
+    margin-left: -10px;
+  }
+ 
+     
+} 

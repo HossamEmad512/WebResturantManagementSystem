@@ -1,0 +1,16 @@
+.gh{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}.notfound .gh button{
+    padding: 10px 18px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    color: #c11111;
+    cursor: pointer;
+}.notfound .gh button p{
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 2px;
+}

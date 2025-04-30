@@ -1,0 +1,76 @@
+<form [formGroup]="formgrioup">
+  <div class="parent2">
+    <div class="RegisiterEmplyee">
+      <div class="child">
+        <label for="phone">phone</label>
+        <input
+          type="text"
+          id="phone"
+          class="form-control"
+          formControlName="phone"
+        />
+      </div>
+      <div
+        class="div alert alert-danger mx-auto"
+        *ngIf="
+          formgrioup.get('Email')?.errors && formgrioup.get('Email')?.touched
+        "
+      >
+        <p *ngIf="formgrioup.get('Email')?.getError('required')">
+          phone is required
+        </p>
+      </div>
+    </div>
+    <div class="RegisiterEmplyee">
+      <div class="child">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          class="form-control"
+          formControlName="name"
+        />
+      </div>
+      <div
+        class="div alert alert-danger mx-auto"
+        *ngIf="
+          formgrioup.get('name')?.errors && formgrioup.get('name')?.touched
+        "
+      >
+        <p *ngIf="formgrioup.get('name')?.getError('required')">
+          name is required
+        </p>
+      </div>
+    </div>
+
+    <div class="RegisiterEmplyee">
+      <div class="child">
+        <label for="salary">salary</label>
+        <input
+          type="text"
+          id="salary"
+          class="form-control"
+          formControlName="salary"
+        />
+      </div>
+      <div
+        class="div alert alert-danger mx-auto"
+        *ngIf="
+          formgrioup.get('salary')?.errors && formgrioup.get('salary')?.touched
+        "
+      >
+        <p *ngIf="formgrioup.get('salary')?.getError('required')">
+          salary is required
+        </p>
+      </div>
+    </div>
+    <div class="RegisiterEmplyee">
+      <div class="btns">
+        <button (click)="CreatWorkEmplyee()">Create</button>
+        <button style="background-color: #4866dc" routerLink="/GetEmplyeeWork">
+          Back To Work-Emplyee
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

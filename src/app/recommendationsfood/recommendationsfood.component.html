@@ -1,0 +1,246 @@
+<section class="SuperParent mt-5 me-5 pe-5">
+  <div class="parent">
+    <form [formGroup]="formgrioup" (ngSubmit)="(formgrioup)">
+      <div class="parent2">
+        <div class="RegisiterEmplyee">
+          <div class="child">
+            <label for="country">Country</label>
+            <input
+              type="text"
+              id="country"
+              class="form-control"
+              formControlName="country"
+            />
+          </div>
+          <div
+            class="div alert alert-danger mx-auto"
+            *ngIf="
+              formgrioup.get('country')?.errors &&
+              formgrioup.get('country')?.touched
+            "
+          >
+            <p *ngIf="formgrioup.get('country')?.getError('required')">
+              country is required
+            </p>
+          </div>
+        </div>
+        <div class="RegisiterEmplyee">
+          <div class="child">
+            <label for="prep_time">Prepartion time</label>
+            <input
+              type="text"
+              id="prep_time"
+              class="form-control"
+              formControlName="prep_time"
+            />
+          </div>
+          <div
+            class="div alert alert-danger mx-auto"
+            *ngIf="
+              formgrioup.get('prep_time')?.errors &&
+              formgrioup.get('prep_time')?.touched
+            "
+          >
+            <p *ngIf="formgrioup.get('prep_time')?.getError('required')">
+              prep_time is required
+            </p>
+          </div>
+        </div>
+        <div class="RegisiterEmplyee">
+          <div class="child">
+            <label for="num_ingredients">Number of ingredients</label>
+            <input
+              type="text"
+              id="num_ingredients"
+              class="form-control"
+              formControlName="num_ingredients"
+            />
+          </div>
+          <div
+            class="div alert alert-danger mx-auto"
+            *ngIf="
+              formgrioup.get('num_ingredients')?.errors &&
+              formgrioup.get('num_ingredients')?.touched
+            "
+          >
+            <p *ngIf="formgrioup.get('num_ingredients')?.getError('required')">
+              num_ingredients is required
+            </p>
+          </div>
+        </div>
+        <div class="RegisiterEmplyee">
+          <div class="child">
+            <label for="selling_price">Selling price</label>
+            <input
+              type="text"
+              id="selling_price"
+              class="form-control"
+              formControlName="selling_price"
+            />
+          </div>
+          <div
+            class="div alert alert-danger mx-auto"
+            *ngIf="
+              formgrioup.get('selling_price')?.errors &&
+              formgrioup.get('selling_price')?.touched
+            "
+          >
+            <p *ngIf="formgrioup.get('selling_price')?.getError('required')">
+              selling_price is required
+            </p>
+          </div>
+        </div>
+        <div class="RegisiterEmplyee">
+          <div class="child">
+            <label for="cost_price">Cost price</label>
+            <input
+              type="text"
+              id="cost_price"
+              class="form-control"
+              formControlName="cost_price"
+            />
+          </div>
+          <div
+            class="div alert alert-danger mx-auto"
+            *ngIf="
+              formgrioup.get('cost_price')?.errors &&
+              formgrioup.get('cost_price')?.touched
+            "
+          >
+            <p *ngIf="formgrioup.get('cost_price')?.getError('required')">
+              cost_price is required
+            </p>
+          </div>
+        </div>
+        <div class="RegisiterEmplyee">
+          <div class="child">
+            <label for="n_recommendations">Number of recommendations</label>
+            <input
+              style="margin-left: 10px"
+              type="text"
+              id="n_recommendations"
+              class="form-control"
+              formControlName="n_recommendations"
+            />
+          </div>
+          <div
+            class="div alert alert-danger mx-auto"
+            *ngIf="
+              formgrioup.get('n_recommendations')?.errors &&
+              formgrioup.get('n_recommendations')?.touched
+            "
+          >
+            <p
+              *ngIf="formgrioup.get('n_recommendations')?.getError('required')"
+            >
+              n_recommendations is required
+            </p>
+          </div>
+        </div>
+        <div class="btns">
+          <div>
+            <input
+              style="font-size: 30px; margin-right: 10px"
+              width="n"
+              class="form-check-input"
+              type="radio"
+              formControlName="option"
+              name="myoption"
+              value="option"
+              id="1"
+            />
+            <label for="1" style="cursor: pointer"
+              >Recommendations based on All</label
+            >
+          </div>
+          <div>
+            <input
+              style="font-size: 30px; margin-right: 10px; margin-left: 20px"
+              width="n"
+              class="form-check-input"
+              type="radio"
+              name="myoption"
+              formControlName="optons1"
+              value="option1"
+              id="2"
+            />
+            <label for="2" style="cursor: pointer"
+              >Recommendations based on Profit</label
+            >
+          </div>
+          <div>
+            <input
+              style="font-size: 30px; margin-right: 10px; margin-left: 27px"
+              width="n"
+              class="form-check-input"
+              type="radio"
+              name="myoption"
+              formControlName="options2"
+              value="option2"
+              id="3"
+            />
+            <label for="3" style="cursor: pointer"
+              >Recommendations based on orders</label
+            ><br />
+          </div>
+        </div>
+
+        <div class="RegisiterEmplyee">
+          <button (click)="showForm()" (click)="Compare()">
+            Get Recommendation
+          </button>
+        </div>
+
+        <!-- تغطية الخلفية -->
+        <div class="overlay" *ngIf="isFormVisible" (click)="closeForm()"></div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<div class="popup" *ngIf="isFormVisible">
+  <div class="scrollable">
+    <table *ngIf="SelectAll.length > 0">
+      <thead>
+        <tr>
+          <th>category</th>
+
+          <th>cost</th>
+          <th>Country</th>
+          <th>Ingredient Count</th>
+          <th>Ingredients</th>
+          <th>Name</th>
+          <th>Preparation Method</th>
+          <th>preparation_time</th>
+          <th>Rating</th>
+          <th>Selling Price (EGP)</th>
+          <th>Save</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of SelectAll">
+          <td>{{ user.category }}</td>
+
+          <td>{{ user.cost_price_egp }}</td>
+          <td>{{ user.country }}</td>
+          <td>{{ user.ingredient_count }}</td>
+          <td>{{ user.ingredients }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.preparation_method }}</td>
+          <td>{{ user.preparation_time_minutes }}</td>
+          <td>{{ user.profit }}</td>
+          <td>{{ user.selling_price_egp }}</td>
+          <td>
+            <button class="btn" (click)="CreateRecommendation(user)">
+              Save
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="btnclose">
+    <button (click)="closeForm()">close</button>
+  </div>
+</div>

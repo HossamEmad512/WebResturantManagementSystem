@@ -1,0 +1,27 @@
+<div class="container">
+    <section class="w-75 mx-auto taha1">
+        <h1 style="color: brown;">Update Resturant</h1>
+
+        <form class="mt-4" [formGroup]="forimgroup" (ngSubmit)="Updata()">
+            
+            <div class="create">
+                <label class="label" for="resturantName">Resturant Name:</label>
+                <input type="text" class="form-control  " formControlName="resturantName">
+                <div class="alert alert-danger messageErro mx-auto"  *ngIf="forimgroup.get('resturantName')?.errors && forimgroup.get('resturantName')?.touched">
+                    <p *ngIf="forimgroup.get('resturantName')?.getError('required')"> is required</p>
+                  
+                   
+                   
+                </div>
+            
+            </div>
+            
+           <div class="createbuttons">
+            
+            <button [disabled]="forimgroup.invalid" class="btn-main" style="background-color: #1AC239"  >Updata</button>
+            <button class="btn-main" routerLink="/home">Back To List</button>
+           </div>
+            
+        </form>
+    </section>
+</div>

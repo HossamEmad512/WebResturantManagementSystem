@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+:root {
+  --main-color: #dc0801;
+  --light-color: #f0f3f2;
+  --shadow: rgba(145, 158, 171, 0.2) 0px 2px 4px -1px,
+    rgba(145, 158, 171, 0.14) 0px 4px 5px 0px,
+    rgba(145, 158, 171, 0.12) 0px 1px 10px 0px;
+
+  --rating-color: #ffc908;
+
+  --font-defult: "Open Sans", sans-serif;
+  --font-primary: "Amatic SC", sans-serif;
+  --font-secondry: "Inter", sans-serif;
+}
+
+body {
+  font-family: var(--font-defult) !important;
+}
+
+.nav-link {
+  transition: unset !important;
+}
+.active-link {
+  background-color: var(--main-color) !important;
+  color: var(--light-color) !important;
+  border-radius: 5px;
+}
+
+.rating-color {
+  color: var(--rating-color);
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+a,
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+.create .btn-up {
+  border: transparent;
+  margin: auto;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+  color: aliceblue;
+  background-color: #67c100;
+  transition: all 4s;
+}
+.create .overlay p {
+  font-weight: 700;
+  display: none;
+  position: fixed;
+  right: 80px;
+  bottom: 5px;
+
+  margin-top: 5px;
+  font-style: italic;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.823);
+}
+.create:hover .overlay p {
+  display: flex;
+  color: #67c100;
+}
+.messageErro {
+  text-align: center;
+
+  width: 400px;
+  height: 50px;
+  margin-top: 25px;
+}
