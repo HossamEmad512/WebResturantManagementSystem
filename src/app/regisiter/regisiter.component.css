@@ -1,191 +1,188 @@
-.super{
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    align-items: center;
+.super {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
 }
 
-
-
-.Regisiter .child{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
-
-}.Regisiter .child input{
-    width: 300px;
-    border-radius: 20px;
-    background-color: #d9d9d9;
-    
-}.Regisiter{
-    margin-top: 30px;
-    
+.Regisiter .child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Regisiter .child input {
+  width: 300px;
+  border-radius: 20px;
+  background-color: #d9d9d9;
+}
+.Regisiter {
+  margin-top: 30px;
 }
 .div {
-    
-    text-align: center;
-    width: 200px;
-    margin-left: 60px;
-   
-    margin-top: 10px;
-    
-}.div p{
-    margin-top: -10px;
-}
-.parent{
-    
-    background-color: #f8f9fa;
-    border-radius: 36px;
+  text-align: center;
+  width: 200px;
+  margin-left: 60px;
 
-    box-shadow: 0PX 10px 10px 10PX #EDECEC;
-    height: auto;
-    width: 500px;
-    margin-top: 25px;
-   
-    
-   
+  margin-top: 10px;
+}
+.div p {
+  margin-top: -10px;
+}
+.parent {
+  background-color: #f8f9fa;
+  border-radius: 36px;
+  overflow: hidden;
+  box-shadow: 0px 10px 10px 10px #edecec;
+  height: auto;
+  width: 500px;
+  height: 480px;
+  margin-top: 25px;
 }
 
-.Regisiter label{
-    padding: 10px;
-   font-family: var(--font-primary);
-   font-weight: 700;
-   font-size: 22px;
-   line-height: 10px;
-   align-items: center;
-  
-  
- 
-  
-   
-}#flexRadioDefault1{
-    width: 40px;
-    height: 35px;
-    margin-left: 25px;
-   border: 1px solid #Dc0801;
-   
+.Regisiter label {
+  font-weight: 500;
+  font-size: large;
+  line-height: 10px;
+  margin-top: 10px;
+  text-align: center;
+  width: 150px;
+  height: 30px;
+}
+#flexRadioDefault1 {
+  width: 40px;
+  height: 35px;
+  margin-left: 25px;
+  border: 1px solid #dc0801;
 }
 
-  .Regisiter button{
-    
-    border-radius: 20px;
-    text-align: center;
-    background-color: #d9d9d9;
-    color: black;
-    justify-content: center;
-    align-items: center;
-    font-weight: 300;
-    font-style: italic;
-    align-content: center;
-    
-} .parent h1{
-    font-weight: 400;
-    font-size: 32px;
-    color: #Dc0801;
-    margin-top: 15px;
-    text-align: center;
-    
-    margin-bottom: 10px;
-    
-   
-    
-    
-}.super .imagehover picture img {
-    
+.Regisiter button {
+  width: 150px;
+  height: 40px;
+  border-radius: 20px;
+  text-align: center;
+  border-color: whitesmoke;
+  background-color: #d9d9d9;
+  color: black;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  font-size: large;
+  font-style: italic;
+  align-content: center;
+}
+.parent h1 {
+  font-weight: 400;
+  font-size: 32px;
+  color: #dc0801;
+  margin-top: 15px;
+  text-align: center;
 
-    
-    filter: drop-shadow(0px 10px 10px #0006);
-    
-   
-    
-}.super .imagehover :hover{
-    animation: vib 1s infinite;}
-
-@keyframes vib{
-    0%{transform: translate(1px,1px); transform: rotate(0deg);}
-    10%{transform: translate(-1px,-2px); transform: rotate(-1deg);}
-    20%{transform: translate(-3px,0px); transform: rotate(1deg);}
-    30%{transform: translate(3px,2px); transform: rotate(0deg);}
-    40%{transform: translate(1px,-1px); transform: rotate(1deg);}
-    50%{transform: translate(-1px,2px); transform: rotate(-1deg);}
-    60%{transform: translate(1px,1px); transform: rotate(0deg);}
-    70%{transform: translate(-1px,-2px); transform: rotate(-1deg);}
-    80%{transform: translate(-3px,0px); transform: rotate(1deg);}
-    90%{transform: translate(3px,2px); transform: rotate(0deg);}
-    100%{transform: translate(1px,-1px); transform: rotate(1deg);}
-    
+  margin-bottom: 10px;
+}
+.super .imagehover picture img {
+  filter: drop-shadow(0px 10px 10px #0006);
+}
+.super .imagehover :hover {
+  animation: vib 1s infinite;
 }
 
+@keyframes vib {
+  0% {
+    transform: translate(1px, 1px);
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px);
+    transform: rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px);
+    transform: rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px);
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px);
+    transform: rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px);
+    transform: rotate(-1deg);
+  }
+  60% {
+    transform: translate(1px, 1px);
+    transform: rotate(0deg);
+  }
+  70% {
+    transform: translate(-1px, -2px);
+    transform: rotate(-1deg);
+  }
+  80% {
+    transform: translate(-3px, 0px);
+    transform: rotate(1deg);
+  }
+  90% {
+    transform: translate(3px, 2px);
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -1px);
+    transform: rotate(1deg);
+  }
+}
 
-
-img{
-    width: 100%;
-    margin-top: 10px;
+img {
+  width: 100%;
+  margin-top: 10px;
 }
 @media screen and (min-width: 1200px) {
-    img{
-        margin-top: 50px;
-        margin-left: 40px;
-        width: 400px;
-      }
-     
-    
-
+  img {
+    margin-top: 50px;
+    margin-left: 40px;
+    width: 400px;
+  }
 }
 
 @media screen and (max-width: 992px) {
-    img{
-        margin-top: 50px;
-        margin-left: 40px;
-        width: 300px;
-      }.parent{
-        width: 400px;
-      }.Regisiter .child input{
-        width: 200px;
-
-      }.div{
-        width: 250px;
-        font-size: 12px;
-        height: 20px;
-      }
-   
-    
+  img {
+    margin-top: 50px;
+    margin-left: 40px;
+    width: 300px;
+  }
+  .parent {
+    width: 400px;
+  }
+  .Regisiter .child input {
+    width: 200px;
+  }
+  .div {
+    width: 250px;
+    font-size: 12px;
+    height: 20px;
+  }
 }
-@media screen and (max-width: 768px){
-
-    img{
-       width: 150px;
-       
-      }.parent{
-        width: 380px;
-      }
-      .Regisiter label{
-        padding: 8px;
-       font-family: var(--font-primary);
-       font-weight: 900;
-       font-size: 20px;
-       
-    }
-    
-   
+@media screen and (max-width: 768px) {
+  img {
+    width: 150px;
+  }
+  .parent {
+    width: 380px;
+  }
+  .Regisiter label {
+    padding: 8px;
+    font-family: var(--font-primary);
+    font-weight: 900;
+    font-size: 20px;
+  }
 }
-
 
 @media screen and (max-width: 576px) {
-    .super{
-        display: flex;
-        flex-direction: column;
-    }
-   
-   
-
-
-
-
-}@media screen and (max-width: 400px){
-   
+  .super {
+    display: flex;
+    flex-direction: column;
+  }
 }
-
-
-
+@media screen and (max-width: 400px) {
+}

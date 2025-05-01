@@ -1,71 +1,73 @@
-
 <div class="container">
-    <div class="row">
-        <div class="super">
-            
-            <div class="child">
-                <form [formGroup]="formgrioup" (ngSubmit)="hellwo()">
-                    
-                    <div class="parent">
-                        <div class="left">
-                            <h1>Login</h1>
-                        </div>
-                        <div class="left">
-                            <div class="  taha">
-                                <label  for="email">Email:</label>
-                                <input type="email" class="form-control  " formControlName="email">
-                             
-                            </div>
-                
-                            
-                        </div>
-                       
-                
-                       
-                
-                        <div class="left">
-                            <div class=" taha">
-                                <label for="password ">password:</label>
-                                <input type="password" class="form-control label5" formControlName="password">
-                                
-                            </div>
-                        </div>
-                        <div class="left">
-                            <div class="form-check d-flex">
-                                <input class="form-check-input w-25 " type="radio" name="flexRadioDefault" id="flexRadioDefault1" formControlName="role" value="Owner">
-                                <label class="form-check-label" for="flexRadioDefault1">
-                                Owner
-                                </label>
-                              </div>
-                              <div class="form-check d-flex" >
-                                <input class="form-check-input w-25" type="radio" name="flexRadioDefault" id="flexRadioDefault2" formControlName="role" value="Employee">
-                                <label class="form-check-label" for="flexRadioDefault2">
-                                  Emplyee
-                                </label>
-                              </div>
-                        </div>
-    
-                        
-                      
-                       
-                        <div class="left">
-                            <div class="  taha">
-                                
-                                <button class="btn-main d-block ms-auto">Login</button>
-                                
-                            </div>
-                        </div>
-                
-                      </div>
-                     
-                  </form>
-                
-    
-            </div><div class="child">
-                <picture> <img src="../../assets/imges/hero-img.png" alt="" ></picture>
+  <div class="row">
+    <div class="super mt-5">
+      <div class="child">
+        <form [formGroup]="formgrioup" (ngSubmit)="login()">
+          <div class="parent">
+            <div class="left">
+              <h1>Login</h1>
             </div>
-        </div>
-    </div>
-   
+            <div class="left">
+              <div class="taha">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  formControlName="email"
+                />
+              </div>
+            </div>
 
+            <div class="left">
+              <div class="taha">
+                <label for="password ">password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  formControlName="password"
+                />
+              </div>
+            </div>
+            <div class="left">
+              <div class="form-check d-flex">
+                <input
+                  class="form-check-input w-25"
+                  type="radio"
+                  name="flexRadioDefault"
+                  id="flexRadioDefault1"
+                  formControlName="role"
+                  value="Owner"
+                />
+                <label class="form-check-label mt-1" for="flexRadioDefault1">
+                  Owner
+                </label>
+              </div>
+              <div class="form-check d-flex">
+                <input
+                  class="form-check-input w-25"
+                  type="radio"
+                  name="flexRadioDefault"
+                  id="flexRadioDefault2"
+                  formControlName="role"
+                  value="Employee"
+                />
+                <label class="form-check-label mt-1" for="flexRadioDefault2">
+                  Emplyee
+                </label>
+              </div>
+            </div>
+
+            <div class="left">
+              <div class="taha">
+                <button class="btn-main d-block ms-auto">Login</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="child">
+        <picture> <img src="../../assets/imges/hero-img.png" alt="" /></picture>
+      </div>
+    </div>
+  </div>
 </div>

@@ -42,7 +42,6 @@ const routes: Routes = [
       { path: 'navbarMenue', component: NavbarmeneComponent },
       { path: 'EmplyeeAccount', component: EmplyeeAccountComponent },
       { path: 'UpdataAccountEmplyee', component: UpdataEmplyeeComponent },
-      { path: 'GetRecommendations', component: GetRecommendationsComponent },
 
       { path: 'updata/:id', component: UpdataComponent },
       { path: 'create', component: CreateRestaurantsComponent },
@@ -58,6 +57,10 @@ const routes: Routes = [
           { path: 'Kitchen', component: KitchenComponent },
           { path: 'Recommendation', component: RecommendationsfoodComponent },
           { path: 'GetEmplyeeWork', component: GetWorkEmplyeeComponent },
+          {
+            path: 'GetRecommendations',
+            component: GetRecommendationsComponent,
+          },
 
           { path: 'emplyee', component: EmpyleeComponent },
           { path: 'creatmenue/:id', component: CreateMenueComponent },

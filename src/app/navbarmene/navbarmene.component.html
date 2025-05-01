@@ -1,41 +1,71 @@
-<label >
-    <input type="checkbox">
-    <div class="toggle">
-        <span class="top-line common"></span>
-        <span class="middle-line common"></span>
-        <span class="bottom-line common"></span>
-    </div>
-    <div class="slide">
-        
-        <ul>
-            <li><a > <img   style="width: 60px ; margin-top: 40px; margin-left: 30px;"src="./assets/imges/favicon.png" alt=""></a></li>
-            <li><a  [routerLink]="['/Menu',idrestaurant]" >  <i class="fa-sharp fa-solid fa-bars"></i> MENU</a></li>
-            <li *ngIf="role == 'Owner'"><a routerLink="/emplyee"><i  class="fa-solid fa-circle-user"></i>Emplyee-Account </a></li>
- 
-              
-              
-      
-            <li><a routerLink="/Kitchen"><i class="fa-solid fa-kitchen-set"></i> Kitchen</a></li>
-            <li ><a routerLink="/Orders"><i class="fa-solid fa-basket-shopping"></i> Order</a></li>
-            <li *ngIf="role == 'Owner'"><a routerLink="/Sales"><img style="width: 20px;" src="./assets/imges/divide.png" > Sales</a></li>
-            <li *ngIf="role == 'Owner'"><a routerLink="/GetRecommendations"><i class="fa-solid fa-notes-medical"></i> Recommendation</a></li>
-            <li *ngIf="role == 'Owner'"><a style="margin-left: 10px;font-size: 20px;" routerLink="/GetEmplyeeWork"><i class="fa-solid fa-user-tie"></i> work-emplyee</a></li>
-            
-        </ul>
+<label>
+  <input type="checkbox" />
+  <div class="toggle">
+    <span class="top-line common"></span>
+    <span class="middle-line common"></span>
+    <span class="bottom-line common"></span>
+  </div>
+  <div class="slide">
+    <ul>
+      <li>
+        <a>
+          <img
+            style="width: 60px; margin-top: 40px; margin-left: 60px"
+            src="./assets/imges/favicon.png"
+            alt=""
+        /></a>
+      </li>
+      <li>
+        <a [routerLink]="['/Menu', idrestaurant]">
+          <i class="fa-sharp fa-solid fa-bars"></i> MENU</a
+        >
+      </li>
+      <li *ngIf="role == 'Owner'">
+        <a routerLink="/emplyee"
+          ><i class="fa-solid fa-circle-user"></i>Emplyee-Account
+        </a>
+      </li>
 
-        
-       
-        
+      <li>
+        <a routerLink="/Kitchen"
+          ><i class="fa-solid fa-kitchen-set"></i> Kitchen</a
+        >
+      </li>
+      <li>
+        <a routerLink="/Orders"
+          ><i class="fa-solid fa-basket-shopping"></i> Order</a
+        >
+      </li>
+      <li *ngIf="role == 'Owner'">
+        <a routerLink="/Sales"
+          ><i class="fa-solid fa-money-check-dollar"></i> Sales</a
+        >
+      </li>
+      <li *ngIf="role == 'Owner'">
+        <a routerLink="/GetRecommendations"
+          ><i class="fa-solid fa-notes-medical"></i> Recommendation</a
+        >
+      </li>
+      <li *ngIf="role == 'Owner'">
+        <a routerLink="/GetEmplyeeWork"
+          ><i class="fa-solid fa-user-tie"></i>work-emplyee</a
+        >
+      </li>
+    </ul>
+
     <div class="create">
-    
-        <div class="overlay">
-          <p class="mb-4">back to home</p>
-        </div>
-       
-       <div> <button class="btn-up mb-4" routerLink="/home"> <i class="fa-sharp fa-solid fa-circle-chevron-left" style="font-size: xx-large;"></i></button></div>
-    </div>
-    
-    </div>
+      <div class="overlay">
+        <p class="back">back to home</p>
+      </div>
 
-
+      <div>
+        <button class="btn-up mb-4" routerLink="/home">
+          <i
+            class="fa-sharp fa-solid fa-circle-chevron-left"
+            style="font-size: xx-large"
+          ></i>
+        </button>
+      </div>
+    </div>
+  </div>
 </label>
