@@ -96,6 +96,20 @@ export class RecommendationsfoodComponent {
           },
         });
     }
+    this.formgrioup.get('country')?.setValue('');
+    this.formgrioup.get('country')?.setErrors(null);
+    this.formgrioup.get('prep_time')?.setValue('');
+    this.formgrioup.get('prep_time')?.setErrors(null);
+    this.formgrioup.get('options2')?.setValue('');
+    this.formgrioup.get('options2')?.setErrors(null);
+    this.formgrioup.get('cost_price')?.setValue('');
+    this.formgrioup.get('cost_price')?.setErrors(null);
+    this.formgrioup.get('selling_price')?.setValue('');
+    this.formgrioup.get('selling_price')?.setErrors(null);
+    this.formgrioup.get('n_recommendations')?.setValue('');
+    this.formgrioup.get('n_recommendations')?.setErrors(null);
+    this.formgrioup.get('num_ingredients')?.setValue('');
+    this.formgrioup.get('num_ingredients')?.setErrors(null);
   }
 
   CreateRecommendation(Item: any): void {

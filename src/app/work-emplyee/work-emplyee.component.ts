@@ -35,6 +35,12 @@ export class WorkEmplyeeComponent {
     this._AuthSalesService.CreateWorkEmplyee(compostedObject).subscribe({
       next: (response) => {
         console.log('workEmplyee', response);
+        this.formgrioup.get('salary')?.setValue('');
+        this.formgrioup.get('salary')?.setErrors(null);
+        this.formgrioup.get('phone')?.setValue('');
+        this.formgrioup.get('phone')?.setErrors(null);
+        this.formgrioup.get('name')?.setValue('');
+        this.formgrioup.get('name')?.setErrors(null);
       },
     });
   }

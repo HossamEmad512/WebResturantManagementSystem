@@ -42,5 +42,10 @@ export class RegisiterComponent {
         console.log(err);
       },
     });
+    this.formgrioup.get('displayName')?.setValue('');
+    this.formgrioup.get('email')?.setValue('');
+    this.formgrioup.get('phoneNumber')?.setValue('');
+    this.formgrioup.get('password')?.setValue('');
+    this.formgrioup.get('role')?.setValue('');
   }
 }
