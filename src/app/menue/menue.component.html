@@ -1,12 +1,9 @@
 <section>
   <div *ngIf="GetAllMenue; else name">
     <div class="row content">
-      <div class="col-md-4" *ngFor="let item of GetAllMenue">
+      <div class="col-lg-4 col-md-4 col-sm-6" *ngFor="let item of GetAllMenue">
         <div class="childmenue" style="margin-left: 10px">
-          <h1>
-            <span> {{ item.name }}</span>
-          </h1>
-
+          <span> {{ item.name }}</span>
           <span>{{ item.price | currency : "EGP" }}</span>
         </div>
       </div>

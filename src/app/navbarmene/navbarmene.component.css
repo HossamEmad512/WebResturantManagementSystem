@@ -11,14 +11,15 @@ body {
 label {
   top: 0px;
   margin-top: -50px;
+  height: 106vh;
 }
 .slide {
-  width: 220px;
+  width: 240px;
   height: 100%;
-  position: absolute;
+
   background-color: #cad8cd;
   transition: 0.5s ease;
-  transform: translateX(-220px);
+  transform: translateX(-240px);
 }
 h1 {
   font-weight: 800;

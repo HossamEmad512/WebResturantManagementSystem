@@ -1,8 +1,13 @@
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}body{
-    background-color: #f2f2f2;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #f2f2f2;
+}
+app-navbarmene {
+  position: fixed;
+  top: 0px;
+  z-index: 10009999;
 }

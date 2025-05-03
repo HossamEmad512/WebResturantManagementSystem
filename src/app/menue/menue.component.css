@@ -12,6 +12,10 @@ body {
 
 .childmenue {
   background-color: #f2f2f2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
 
   margin-bottom: 20px;
   margin-right: 20px;
@@ -19,13 +23,9 @@ body {
   padding: 15px;
   box-shadow: -2px -2px 5px 2px #a6d3ae;
 }
-.childmenue h1 {
-  font-weight: 800;
-  font-size: 25px;
-  font-style: italic;
-}
+
 .childmenue span {
   font-size: 20px;
   line-height: 5px;
-  font-weight: 600;
+  font-weight: 700;
 }

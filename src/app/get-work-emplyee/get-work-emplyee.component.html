@@ -7,7 +7,7 @@
           <th scope="col">Salary</th>
 
           <th scope="col">phone</th>
-          <th *ngIf="role == 'Owner'" scope="col">updata</th>
+          <th *ngIf="role == 'Owner'" scope="col">Update</th>
           <th *ngIf="role == 'Owner'" scope="col">Delete</th>
         </tr>
       </thead>
@@ -19,7 +19,7 @@
           <td>{{ item.phone }}</td>
 
           <td *ngIf="role == 'Owner'">
-            <button class="btn1" routerLink="/updataworEmplyee">Updata</button>
+            <button class="btn1" routerLink="/updataworEmplyee">Update</button>
           </td>
           <td *ngIf="role == 'Owner'">
             <button
@@ -40,7 +40,7 @@
   <div class="overlay">
     <p>
       create<br />
-      Emplyee-work
+      Employee-work
     </p>
   </div>
 
@@ -52,6 +52,6 @@
 </div>
 <ng-template class="mj" #name>
   <h2 class="text-center" style="color: #1ac239">
-    Work Emplyee is Emptey .....
+    Work Employee is Empty .....
   </h2>
 </ng-template>

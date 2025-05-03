@@ -48,7 +48,7 @@
       <form action="" [formGroup]="formGeroup">
         <div class="popup" *ngIf="isFormVisible">
           <div class="popup-content">
-            <h2>Enter your Data</h2>
+            <h2>Confirm Order</h2>
             <table *ngIf="orderItems.length > 0">
               <thead>
                 <tr>
@@ -66,13 +66,15 @@
               </tbody>
             </table>
 
-            <label>Number of Table:</label>
+            <label>Table Number</label>
             <input
               type="number"
               formControlName="tableNumber"
               class="form-control"
             />
-
+            <div class="alert alert-primary" role="alert">
+              If order is takeaway please enter number table by 0
+            </div>
             <div class="actions">
               <button type="submit" (click)="submitForm()">Save</button>
               <button (click)="closeForm()">close</button>

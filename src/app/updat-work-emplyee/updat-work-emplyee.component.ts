@@ -23,7 +23,7 @@ export class UpdatWorkEmplyeeComponent {
     salary: new FormControl('', [Validators.required]),
   });
 
-  UpdataWorkEmplyee(): void {
+  UpdateWorkEmplyee(): void {
     this.Idrestaurnat = localStorage.getItem('IdRestaurant');
     this.idEmplyee = localStorage.getItem('IdEmplyee');
     let compostedObject = {

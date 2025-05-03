@@ -47,8 +47,8 @@ export class CreateMenueComponent {
       this.formgrioup.get('cost')?.setValue(''),
       this.formgrioup.get('price')?.setValue('');
     this.formgrioup.get('price')?.setErrors(null);
-    this.formgrioup.get('price')?.setErrors(null);
-    this.formgrioup.get('price')?.setErrors(null);
+    this.formgrioup.get('name')?.setErrors(null);
+    this.formgrioup.get('cost')?.setErrors(null);
   }
 
   addmenue(): void {
@@ -64,8 +64,8 @@ export class CreateMenueComponent {
         console.log('menue', response);
         this._ToastrService.success('menue is created successfully');
         this.formgrioup.get('price')?.setErrors(null);
-        this.formgrioup.get('price')?.setErrors(null);
-        this.formgrioup.get('price')?.setErrors(null);
+        this.formgrioup.get('name')?.setErrors(null);
+        this.formgrioup.get('cost')?.setErrors(null);
         this._Router.navigate(['/Menu', this.idrestaurant]);
       },
     });
