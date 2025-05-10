@@ -15,7 +15,8 @@ label {
 }
 .slide {
   width: 240px;
-  height: 100%;
+  height: 107vh;
+  position: fixed;
 
   background-color: #cad8cd;
   transition: 0.5s ease;
@@ -111,6 +112,7 @@ input:checked ~ .toggle .middle-line {
 }
 input:checked ~ .slide {
   transform: translateX(0);
+  position: static;
   box-shadow: 0 0 15px rgb(0, 0, 0, 0.5);
 }
 

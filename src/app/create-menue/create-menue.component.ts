@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class CreateMenueComponent {
   idrestaurant: any = localStorage.getItem('IdRestaurant');
-
+  isPriceValid: boolean = true;
   constructor(
     private _AuthservicesService: AuthservicesService,
     private _Router: Router,
@@ -32,13 +32,16 @@ export class CreateMenueComponent {
 
   // دالة لإضافة المستخدم إلى المصفوفة عند الضغط على Submit
   addmenuedetails(): void {
-    let user = { name: '', cost: null, price: null };
+    let user = {
+      name: this.formgrioup.get('name')?.value,
+      cost: this.formgrioup.get('cost')?.value,
+      price: this.formgrioup.get('price')?.value,
+    };
 
-    (user.name = this.formgrioup.get('name')?.value),
-      (user.cost = this.formgrioup.get('cost')?.value),
-      (user.price = this.formgrioup.get('price')?.value),
-      console.log(this.menueItems);
-
+    if (user.cost > user.price) {
+      this.isPriceValid = false;
+      return;
+    }
     // نسخ البيانات وإضافتها إلى المصفوفة
     this.menueItems.push(user);
     this._ToastrService.success('is added successfully');
@@ -52,6 +55,12 @@ export class CreateMenueComponent {
   }
 
   addmenue(): void {
+    if (
+      this.formgrioup.get('cost')?.value > this.formgrioup.get('price')?.value
+    ) {
+      this.isPriceValid = false;
+      return;
+    }
     this.addmenuedetails();
     let combinedObject = {
       menueItems: this.menueItems,

@@ -3,6 +3,7 @@
     <thead>
       <tr>
         <th scope="col">Name</th>
+        <th scope="col">Position</th>
         <th scope="col">Email</th>
         <th scope="col">password</th>
 
@@ -12,6 +13,7 @@
     <tbody>
       <tr *ngFor="let item of AllEmplyee; let i = index">
         <td>{{ item.name }}</td>
+        <td>{{ item.position }}</td>
 
         <td>{{ item.email }}</td>
         <td>{{ item.password }}</td>

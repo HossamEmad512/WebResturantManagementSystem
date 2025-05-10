@@ -25,9 +25,9 @@
         </table>
 
         <div class="bottomTable">
-          <span>Number Table:{{ item1.tableNumber }}</span
-          ><br />
-          <span>TOTAL Price:{{ Getsum(item1.orderItems) }}</span>
+          <p>Table Number: {{ item1.tableNumber }}</p>
+          <p>Phone Number: {{ item1.phoneNumber }}</p>
+          <p>Total Price: {{ Getsum(item1.orderItems) }}</p>
 
           <div class="btnorders">
             <button (click)="creatsales(item1, item1.id)">sold</button>

@@ -1,4 +1,34 @@
 <section *ngIf="TOTAL; else name">
+  <div class="dropdown">
+    <button
+      class="btn btn-secondary dropdown-toggle w-75"
+      type="button"
+      id="dropdownMenuButton1"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      Date Filter
+    </button>
+    <ul class="dropdown-menu w-75" aria-labelledby="dropdownMenuButton1">
+      <li><button class="dropdown-item" (click)="allDate()">All</button></li>
+      <li>
+        <button class="dropdown-item" (click)="getLastNDays(7)">
+          Last 7 Day
+        </button>
+      </li>
+      <li>
+        <button class="dropdown-item" (click)="getLastNDays(14)">
+          Last 14 Day
+        </button>
+      </li>
+      <li>
+        <button class="dropdown-item" (click)="getLastNDays(30)">
+          Last 30 Day
+        </button>
+      </li>
+    </ul>
+  </div>
+
   <table>
     <thead>
       <tr>
@@ -7,9 +37,11 @@
         <th>Total Price</th>
 
         <th>Profit</th>
+        <th>Date Of Creation</th>
+        <th>Details</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody *ngIf="showAll">
       <tr *ngFor="let item of TOTAL.orders; let i = index">
         <td>{{ i + 1 }}</td>
         <!-- رقم الصف يبدأ من 1 -->
@@ -18,10 +50,30 @@
 
         <td>{{ item.totalPrice }}</td>
         <td>{{ item.totalPrice - item.totalCost }}</td>
+        <td>{{ item.dateOfCreation.slice(0, 10) }}</td>
+        <td>
+          <button class="btn btn-info" (click)="showForm(item)">Details</button>
+        </td>
+      </tr>
+    </tbody>
+
+    <tbody *ngIf="!showAll">
+      <tr *ngFor="let item of ordersByDate; let i = index">
+        <td>{{ i + 1 }}</td>
+        <!-- رقم الصف يبدأ من 1 -->
+
+        <td>{{ item.totalCost }}</td>
+
+        <td>{{ item.totalPrice }}</td>
+        <td>{{ item.totalPrice - item.totalCost }}</td>
+        <td>{{ item.dateOfCreation.slice(0, 10) }}</td>
+        <td>
+          <button class="btn btn-info" (click)="showForm(item)">Details</button>
+        </td>
       </tr>
     </tbody>
   </table>
-  <div class="bottomTable">
+  <div class="bottomTable mt-3 mb-3" *ngIf="showAll">
     <span>TOtAL Cost:{{ TOTAL.totalCost }}</span
     ><br />
     <span>Total Price:{{ TOTAL.totalPrice }}</span
@@ -29,8 +81,40 @@
     <span> Profit:{{ TOTAL.totalProfit }}</span
     ><br />
   </div>
+  <div class="bottomTable mt-3 mb-3" *ngIf="!showAll">
+    <span>TOtAL Cost:{{ totalCostWithDateFilter }}</span
+    ><br />
+    <span>Total Price:{{ totalPriceWithDateFilter }}</span
+    ><br />
+    <span> Profit:{{ totalProfitWithDateFilter }}</span
+    ><br />
+  </div>
 </section>
+<div class="orderDetail" *ngIf="isFormVisible">
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>TOtal Cost</th>
+        <th>Total Price</th>
+        <th>Profit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let i of order.orderItems; let j = index">
+        <td>{{ i.item.name }}</td>
 
+        <td>{{ i.quantity }}</td>
+
+        <td>{{ i.cost }}</td>
+        <td>{{ i.price }}</td>
+        <td>{{ i.price - i.cost }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-danger closebtn" (click)="closeForm()">Close</button>
+</div>
 <ng-template #name>
   <h2 class="text-center">orders is empty .....</h2>
 </ng-template>

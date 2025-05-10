@@ -10,6 +10,10 @@ export class AuthservicesService {
   constructor(private _HttpClient: HttpClient, private _Router: Router) {}
 
   logout(): void {
+    if (localStorage.getItem('role') == 'Employee') {
+      localStorage.removeItem('position');
+      localStorage.removeItem('loginIdResturant');
+    }
     localStorage.removeItem('eToken');
     localStorage.removeItem('role');
     this._Router.navigate(['login']);

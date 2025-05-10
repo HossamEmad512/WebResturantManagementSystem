@@ -1,111 +1,113 @@
-<div class="row">
-  <div class="col-md-4 nav">
-    <app-navbarmene></app-navbarmene>
-  </div>
+<div class="parent col-lg-8 col-md-8">
+  <form [formGroup]="formgrioup">
+    <div class="parent2">
+      <div class="RegisiterEmplyee">
+        <div class="child">
+          <label for="Email">Email</label>
+          <input
+            type="email"
+            id="email"
+            class="form-control"
+            formControlName="Email"
+          />
+        </div>
+        <div
+          class="div alert alert-danger mx-auto"
+          *ngIf="
+            formgrioup.get('Email')?.errors && formgrioup.get('Email')?.touched
+          "
+        >
+          <p *ngIf="formgrioup.get('Email')?.getError('required')">
+            email is required
+          </p>
+          <p *ngIf="formgrioup.get('Email')?.getError('email')">
+            email is notvalid
+          </p>
+        </div>
+      </div>
+      <div class="RegisiterEmplyee">
+        <div class="child">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            class="form-control"
+            formControlName="name"
+          />
+        </div>
+        <div
+          class="div alert alert-danger mx-auto"
+          *ngIf="
+            formgrioup.get('name')?.errors && formgrioup.get('name')?.touched
+          "
+        >
+          <p *ngIf="formgrioup.get('name')?.getError('required')">
+            name is required
+          </p>
+        </div>
+      </div>
+      <div class="RegisiterEmplyee">
+        <div class="child">
+          <label for="password">password</label>
+          <input
+            type="password"
+            id="password"
+            class="form-control"
+            formControlName="password"
+          />
+        </div>
+        <div
+          class="div alert alert-danger mx-auto"
+          *ngIf="
+            formgrioup.get('password')?.errors &&
+            formgrioup.get('password')?.touched
+          "
+        >
+          <p *ngIf="formgrioup.get('password')?.getError('required')">
+            password is required
+          </p>
+        </div>
+      </div>
 
-  <div class="parent col-md-8">
-    <form [formGroup]="formgrioup">
-      <div class="parent2">
-        <div class="RegisiterEmplyee">
-          <div class="child">
-            <label for="Email">Email</label>
+      <div class="RegisiterEmplyee">
+        <div class="child">
+          <div class="form-check d-flex">
             <input
-              type="email"
-              id="email"
-              class="form-control"
-              formControlName="Email"
+              class="form-check-input"
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault1"
+              formControlName="Position"
+              value="Cashier"
             />
+            <label class="form-check-label mt-1" for="flexRadioDefault1">
+              Cashier
+            </label>
           </div>
-          <div
-            class="div alert alert-danger mx-auto"
-            *ngIf="
-              formgrioup.get('Email')?.errors &&
-              formgrioup.get('Email')?.touched
-            "
-          >
-            <p *ngIf="formgrioup.get('Email')?.getError('required')">
-              email is required
-            </p>
-            <p *ngIf="formgrioup.get('Email')?.getError('email')">
-              email is notvalid
-            </p>
-          </div>
-        </div>
-        <div class="RegisiterEmplyee">
-          <div class="child">
-            <label for="name">Name</label>
+
+          <div class="form-check d-flex">
             <input
-              type="text"
-              id="name"
-              class="form-control"
-              formControlName="name"
+              class="form-check-input"
+              type="radio"
+              name="flexRadioDefault"
+              id="flexRadioDefault2"
+              formControlName="Position"
+              value="Kitchen"
             />
-          </div>
-          <div
-            class="div alert alert-danger mx-auto"
-            *ngIf="
-              formgrioup.get('name')?.errors && formgrioup.get('name')?.touched
-            "
-          >
-            <p *ngIf="formgrioup.get('name')?.getError('required')">
-              name is required
-            </p>
-          </div>
-        </div>
-        <div class="RegisiterEmplyee">
-          <div class="child">
-            <label for="password">password</label>
-            <input
-              type="password"
-              style="margin-left: 13px"
-              id="password"
-              class="form-control"
-              formControlName="password"
-            />
-          </div>
-          <div
-            class="div alert alert-danger mx-auto"
-            *ngIf="
-              formgrioup.get('password')?.errors &&
-              formgrioup.get('password')?.touched
-            "
-          >
-            <p *ngIf="formgrioup.get('password')?.getError('required')">
-              password is required
-            </p>
-          </div>
-        </div>
-        <div class="RegisiterEmplyee">
-          <div class="child">
-            <label for="salary">salary</label>
-            <input
-              type="text"
-              id="salary"
-              class="form-control"
-              formControlName="salary"
-            />
-          </div>
-          <div
-            class="div alert alert-danger mx-auto"
-            *ngIf="
-              formgrioup.get('salary')?.errors &&
-              formgrioup.get('salary')?.touched
-            "
-          >
-            <p *ngIf="formgrioup.get('salary')?.getError('required')">
-              salary is required
-            </p>
-          </div>
-        </div>
-        <div class="RegisiterEmplyee">
-          <div class="btns">
-            <button (click)="createAccountSALES()">Create</button>
-            <button style="background-color: #4866dc" routerLink="/emplyee">
-              Back To Emplyee
-            </button>
+            <label class="form-check-label mt-1" for="flexRadioDefault2">
+              Kitchen
+            </label>
           </div>
         </div>
       </div>
-    </form>
-  </div>
+      <div class="RegisiterEmplyee">
+        <div class="btns">
+          <button (click)="createAccountSALES()">Create</button>
+          <button style="background-color: #4866dc" routerLink="/emplyee">
+            Back To Emplyee
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
 </div>

@@ -1,60 +1,62 @@
-
 table {
-    width: 100%;
-    border-collapse: collapse;
-    border-radius: 30px;
-    margin-top: 40px;
-   
-    /* لجعل الحدود متصلة */
-  }
-  th, td {
-    border: 2px solid #4a4a4a; /* لون الحدود */
-    padding: 10px;
-    text-align: center;
-    border-radius: 5px; /* تدوير الحواف */
-  }
-  th {
-    background-color: #CAD8CD;
-    font-style: italic;
+  width: 95%;
+  border-collapse: collapse;
+  border-radius: 30px;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  /* لجعل الحدود متصلة */
+}
+th,
+td {
+  border: 2px solid #4a4a4a; /* لون الحدود */
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px; /* تدوير الحواف */
+}
+th {
+  background-color: #cad8cd;
+  font-style: italic;
   font-weight: 400;
   font-size: 22px;
-  
+
   text-align: center;
   color: #000;
-  
-  }
-  
-  /* ✨ إخفاء بعض الحدود ✨ */
-  tr:first-child th {
-    border-top: none; /* إخفاء الحد العلوي */
-  }
-  tr:last-child th {
-    border-top: none; 
-   /* إخفاء الحد العلوي */
-  }
-  tr td:first-child, tr th:first-child {
-    border-left: none;
-    border-bottom: none; /* إخفاء الحد الأيسر */
-  }tr th:last-child{
-    border-right: none;
-  
-  }
-  tr:last-child td {
-    border-bottom: none; /* إخفاء الحد السفلي في آخر صف */
-  }
-  tr td:last-child {
-    border-right: none;
-     /* إخفاء الحد الأيمن */
-  }.bottomTable{
-    background-color: #D9D9D9;
-    border-radius: 20px;
-    
-    
-   
-  
-  }.bottomTable span{
-    font-size: 25px;
-    font-family: 'Courier New', Courier, monospace;
-    font-style: italic;
-  
-  }
+}
+
+.bottomTable {
+  background-color: #d9d9d9;
+  border-radius: 20px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.bottomTable span {
+  font-size: 25px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  font-family: "Courier New", Courier, monospace;
+  font-style: italic;
+}
+.orderDetail {
+  background-color: whitesmoke;
+  overflow-y: auto;
+  width: 450px;
+  height: 400px;
+  position: fixed;
+  top: 20%;
+  right: 30%;
+}
+
+.closebtn {
+  width: 250px;
+  margin-left: 95px;
+  margin-top: 15px;
+}
+.orderDetail table thead th {
+  font-size: medium !important;
+}
+.dropdown {
+  margin-left: 80%;
+  margin-top: 20px;
+}

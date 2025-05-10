@@ -43,6 +43,7 @@ export class LoginComponent {
       next: (response) => {
         localStorage.setItem('eToken', response.email);
         if (localStorage.getItem('role') == 'Employee') {
+          localStorage.setItem('position', response.position);
           localStorage.setItem('loginIdResturant', response.resturantId);
         }
         console.log(response);

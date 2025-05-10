@@ -8,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarmeneComponent implements OnInit {
   idrestaurant: any;
   role: any;
+  position: any;
 
   ngOnInit(): void {
     this.idrestaurant = localStorage.getItem('IdRestaurant');
     this.role = localStorage.getItem('role');
+    this.position = localStorage.getItem('position');
   }
 }

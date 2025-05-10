@@ -40,7 +40,6 @@ const routes: Routes = [
       { path: 'creatmenue', component: CreateMenueComponent },
 
       { path: 'navbarMenue', component: NavbarmeneComponent },
-      { path: 'EmplyeeAccount', component: EmplyeeAccountComponent },
       { path: 'UpdataAccountEmplyee', component: UpdataEmplyeeComponent },
 
       { path: 'updata/:id', component: UpdataComponent },
@@ -61,6 +60,7 @@ const routes: Routes = [
             path: 'GetRecommendations',
             component: GetRecommendationsComponent,
           },
+          { path: 'EmplyeeAccount', component: EmplyeeAccountComponent },
 
           { path: 'emplyee', component: EmpyleeComponent },
           { path: 'creatmenue/:id', component: CreateMenueComponent },

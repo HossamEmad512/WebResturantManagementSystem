@@ -53,6 +53,9 @@
           [ngModel]="user.price"
           formControlName="price"
         />
+        <div class="alert alert-danger erro" *ngIf="!isPriceValid" role="alert">
+          Price must be greater than cost
+        </div>
         <div
           class="alert alert-danger erro #hidden"
           *ngIf="

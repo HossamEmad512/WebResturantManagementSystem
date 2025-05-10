@@ -6,53 +6,47 @@ import { AuthservicesService } from '../authservices.service';
 @Component({
   selector: 'app-kitchen',
   templateUrl: './kitchen.component.html',
-  styleUrls: ['./kitchen.component.css']
+  styleUrls: ['./kitchen.component.css'],
 })
 export class KitchenComponent implements OnInit {
-  AlloRderKitchen:any;
-  IdOrderKitchen:any;
-  constructor(private _AuthservicesService:AuthservicesService,private _Router:Router,private _AuthSalesService:AuthSalesService) {}
-    ngOnInit(): void {
-      var RestauranyId=localStorage.getItem("IdRestaurant")
-      
-      
-      
-      this. _AuthSalesService.GetCurrentDish(RestauranyId).subscribe({
-        next:(response)=>{
-          console.log(response);
-          this.AlloRderKitchen=response
-          this.IdOrderKitchen=response.id
-        
-          
-          
-          
-         
-  
-        }
-        
-      })
+  AlloRderKitchen: any;
+  IdOrderKitchen: any;
+  role: any;
+  position: any;
+  constructor(
+    private _AuthservicesService: AuthservicesService,
+    private _Router: Router,
+    private _AuthSalesService: AuthSalesService
+  ) {}
+  ngOnInit(): void {
+    var RestauranyId = localStorage.getItem('IdRestaurant');
+    this.role = localStorage.getItem('role');
+    if (this.role == 'Employee') {
+      this.position = localStorage.getItem('position');
     }
+    this._AuthSalesService.GetCurrentDish(RestauranyId).subscribe({
+      next: (response) => {
+        console.log(response);
+        this.AlloRderKitchen = response;
+        this.IdOrderKitchen = response.id;
+      },
+    });
+  }
 
-    DeletKitchen(id:any):void{
-      
-      this. _AuthSalesService.DeleteKitchen(id).subscribe({
-        next:(response)=>{
-          console.log(response);
-          window.location.reload();
-          
-          
-          
-          
-         
-  
-        }
-        
-      })
+  DeleteCurrentDishe(id: any): void {
+    this._AuthSalesService.DeleteCurrentDishe(id).subscribe({
+      next: (response) => {
+        console.log(response);
+        window.location.reload();
+      },
+    });
+  }
+  UpdateCurrentDishe(item: any): void {
+    item.status = 'Done';
+    this._AuthSalesService.UpdateCurrentDishe(item).subscribe(() => {});
+  }
 
-    }
-    
-    interval = setInterval(() => {
-    window.location.reload()
-   }, 300000);
-
+  interval = setInterval(() => {
+    window.location.reload();
+  }, 300000);
 }

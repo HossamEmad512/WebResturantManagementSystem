@@ -2,7 +2,7 @@
   class="container text-center"
   *ngIf="AlloRderKitchen.length; else name"
 >
-  <div class="row content">
+  <div class="row content" *ngIf="role == 'Owner'">
     <div
       class="col-lg-3 col-md-4 col-sm-6 box"
       *ngFor="let item of AlloRderKitchen"
@@ -24,12 +24,102 @@
           </tbody>
         </table>
 
+        <p>Table Number: {{ item.tableNumber }}</p>
+        <p>Phone Number: {{ item.phoneNumber }}</p>
+        <p>Status : {{ item.status }}</p>
         <div class="bottomTable">
-          <div class="btnorders">
-            <button (click)="DeletKitchen(item.id)">Done</button>
+          <div class="btndone">
+            <button
+              class="btn btn-success me-1"
+              (click)="UpdateCurrentDishe(item)"
+            >
+              Done
+            </button>
+          </div>
+          <div class="btndelete">
+            <button
+              class="btn btn-danger"
+              (click)="DeleteCurrentDishe(item.id)"
+            >
+              Delete
+            </button>
           </div>
         </div>
       </section>
+    </div>
+  </div>
+  <div *ngIf="role == 'Employee' && position == 'Kitchen'">
+    <div class="row content" *ngFor="let item of AlloRderKitchen">
+      <div
+        class="col-lg-3 col-md-4 col-sm-6 box"
+        *ngIf="item.status == 'In Progress'"
+      >
+        <section class="Orders">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+
+                <th>quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let orderItem of item.orderItems">
+                <td>{{ orderItem.item.name }}</td>
+                <td>{{ orderItem.quantity }}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Table Number: {{ item.tableNumber }}</p>
+          <p>Phone Number: {{ item.phoneNumber }}</p>
+          <p>Status : {{ item.status }}</p>
+          <div class="bottomTable">
+            <div class="btndelete">
+              <button class="btn btn-danger" (click)="UpdateCurrentDishe(item)">
+                Done
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="role == 'Employee' && position == 'Cashier'">
+    <div class="row content" *ngFor="let item of AlloRderKitchen">
+      <div class="col-lg-3 col-md-4 col-sm-6 box" *ngIf="item.status == 'Done'">
+        <section class="Orders">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+
+                <th>quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let orderItem of item.orderItems">
+                <td>{{ orderItem.item.name }}</td>
+                <td>{{ orderItem.quantity }}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Table Number: {{ item.tableNumber }}</p>
+          <p>Phone Number: {{ item.phoneNumber }}</p>
+          <p>Status : {{ item.status }}</p>
+          <div class="bottomTable">
+            <div class="btndelete">
+              <button
+                class="btn btn-danger"
+                (click)="DeleteCurrentDishe(item.id)"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
     </div>
   </div>
 </section>

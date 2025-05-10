@@ -20,6 +20,7 @@ export class CreateOrdersComponent implements OnInit {
   idrestaurant: any = localStorage.getItem('IdRestaurant');
   formGeroup: FormGroup = new FormGroup({
     tableNumber: new FormControl('', [Validators.required]),
+    phone: new FormControl('', [Validators.required]),
   }); // متغير للتحكم في ظهور النموذج
   name = '';
   email = '';
@@ -75,6 +76,7 @@ export class CreateOrdersComponent implements OnInit {
     let compostedObject = {
       resturantId: this.idrestaurant,
       tableNumber: this.formGeroup.get('tableNumber')?.value,
+      PhoneNumber: this.formGeroup.get('phone')?.value,
       orderItems: this.orderItems,
     };
     console.log(compostedObject);
@@ -86,6 +88,7 @@ export class CreateOrdersComponent implements OnInit {
     });
     this.orderItems.splice(0, this.orderItems.length);
     this.formGeroup.get('tableNumber')?.setValue('');
+    this.formGeroup.get('phone')?.setValue('');
     this.orderItems = [];
     this.closeForm();
   }
