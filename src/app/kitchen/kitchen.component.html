@@ -48,12 +48,13 @@
       </section>
     </div>
   </div>
-  <div *ngIf="role == 'Employee' && position == 'Kitchen'">
-    <div class="row content" *ngFor="let item of AlloRderKitchen">
-      <div
-        class="col-lg-3 col-md-4 col-sm-6 box"
-        *ngIf="item.status == 'In Progress'"
-      >
+
+  <div class="row content" *ngIf="role == 'Employee' && position == 'Kitchen'">
+    <div
+      class="Orders col-lg-3 col-md-4 col-sm-6 box"
+      *ngFor="let item of AlloRderKitchen"
+    >
+      <div *ngIf="item.status == 'In Progress'">
         <section class="Orders">
           <table>
             <thead>
@@ -85,15 +86,18 @@
       </div>
     </div>
   </div>
-  <div *ngIf="role == 'Employee' && position == 'Cashier'">
-    <div class="row content" *ngFor="let item of AlloRderKitchen">
-      <div class="col-lg-3 col-md-4 col-sm-6 box" *ngIf="item.status == 'Done'">
-        <section class="Orders">
+
+  <div class="row content" *ngIf="role == 'Employee' && position == 'Cashier'">
+    <div
+      class="Orders col-lg-3 col-md-4 col-sm-6 box"
+      *ngFor="let item of AlloRderKitchen"
+    >
+      <div *ngIf="item.status == 'Done'">
+        <section>
           <table>
             <thead>
               <tr>
                 <th>Name</th>
-
                 <th>quantity</th>
               </tr>
             </thead>
