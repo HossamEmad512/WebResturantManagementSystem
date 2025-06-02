@@ -9,8 +9,10 @@ import { AuthservicesService } from '../authservices.service';
   styleUrls: ['./kitchen.component.css'],
 })
 export class KitchenComponent implements OnInit {
-  AlloRderKitchen: any;
+  AllOrder: any;
   IdOrderKitchen: any;
+  kitchenOrder: any = [];
+  cashierOrder: any = [];
   role: any;
   position: any;
   constructor(
@@ -27,8 +29,17 @@ export class KitchenComponent implements OnInit {
     this._AuthSalesService.GetCurrentDish(RestauranyId).subscribe({
       next: (response) => {
         console.log(response);
-        this.AlloRderKitchen = response;
+        this.AllOrder = response;
         this.IdOrderKitchen = response.id;
+        this.cashierOrder = [];
+        this.kitchenOrder = [];
+        for (let index in this.AllOrder) {
+          if (this.AllOrder[index].status == 'Done') {
+            this.cashierOrder.push(this.AllOrder[index]);
+          } else {
+            this.kitchenOrder.push(this.AllOrder[index]);
+          }
+        }
       },
     });
   }
@@ -37,13 +48,26 @@ export class KitchenComponent implements OnInit {
     this._AuthSalesService.DeleteCurrentDishe(id).subscribe({
       next: (response) => {
         console.log(response);
+        this.updateArray();
         window.location.reload();
       },
     });
   }
+  updateArray() {
+    this.cashierOrder = [];
+    this.kitchenOrder = [];
+    for (let index in this.AllOrder) {
+      if (this.AllOrder[index].status == 'Done') {
+        this.cashierOrder.push(this.AllOrder[index]);
+      } else {
+        this.kitchenOrder.push(this.AllOrder[index]);
+      }
+    }
+  }
   UpdateCurrentDishe(item: any): void {
     item.status = 'Done';
     this._AuthSalesService.UpdateCurrentDishe(item).subscribe(() => {});
+    this.updateArray();
   }
 
   interval = setInterval(() => {
