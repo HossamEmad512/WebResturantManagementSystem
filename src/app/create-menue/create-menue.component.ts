@@ -25,43 +25,51 @@ export class CreateMenueComponent {
     price: new FormControl('', [Validators.required]),
   });
 
-  menueItems: { name: any; cost: any; price: any }[] = [];
+  menueItems: any = [];
 
   // تعريف كائن فارغ لتخزين بيانات النموذج
   user = { name: '', cost: null, price: null };
 
   // دالة لإضافة المستخدم إلى المصفوفة عند الضغط على Submit
   addmenuedetails(): void {
-    let user = {
-      name: this.formgrioup.get('name')?.value,
-      cost: this.formgrioup.get('cost')?.value,
-      price: this.formgrioup.get('price')?.value,
-    };
+    if (
+      this.formgrioup.get('name')?.value != '' ||
+      this.formgrioup.get('cost')?.value != null ||
+      this.formgrioup.get('price')?.value != null
+    ) {
+      console.log('in if');
 
-    if (user.cost > user.price) {
-      this.isPriceValid = false;
-      return;
+      let user = {
+        name: this.formgrioup.get('name')?.value,
+        cost: this.formgrioup.get('cost')?.value,
+        price: this.formgrioup.get('price')?.value,
+      };
+      if (user.cost > user.price) {
+        this.isPriceValid = false;
+        return;
+      }
+      // نسخ البيانات وإضافتها إلى المصفوفة
+
+      this.menueItems.push(user);
+
+      this._ToastrService.success('is added successfully');
     }
-    // نسخ البيانات وإضافتها إلى المصفوفة
-    this.menueItems.push(user);
-    this._ToastrService.success('is added successfully');
 
     this.formgrioup.get('name')?.setValue(''),
-      this.formgrioup.get('cost')?.setValue(''),
-      this.formgrioup.get('price')?.setValue('');
+      this.formgrioup.get('cost')?.setValue(null),
+      this.formgrioup.get('price')?.setValue(null);
     this.formgrioup.get('price')?.setErrors(null);
     this.formgrioup.get('name')?.setErrors(null);
     this.formgrioup.get('cost')?.setErrors(null);
   }
 
   addmenue(): void {
-    if (
-      this.formgrioup.get('cost')?.value > this.formgrioup.get('price')?.value
-    ) {
-      this.isPriceValid = false;
+    console.log(this.menueItems);
+
+    this.addmenuedetails();
+    if (this.menueItems.length == 0) {
       return;
     }
-    this.addmenuedetails();
     let combinedObject = {
       menueItems: this.menueItems,
       resturantId: this.idrestaurant,
