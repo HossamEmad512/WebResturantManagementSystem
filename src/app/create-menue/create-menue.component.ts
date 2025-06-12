@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthservicesService } from '../authservices.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { RecoomendationsService } from '../recoomendations.service';
 
 @Component({
   selector: 'app-create-menue',
@@ -14,6 +15,7 @@ export class CreateMenueComponent {
   isPriceValid: boolean = true;
   constructor(
     private _AuthservicesService: AuthservicesService,
+    private _RecoomendationsService: RecoomendationsService,
     private _Router: Router,
     private _ToastrService: ToastrService
   ) {}
@@ -75,7 +77,9 @@ export class CreateMenueComponent {
       resturantId: this.idrestaurant,
     };
     console.log('object', combinedObject);
-
+    this._RecoomendationsService
+      .AddFoodItems(combinedObject)
+      .subscribe((r) => {});
     this._AuthservicesService.addMenue(combinedObject).subscribe({
       next: (response) => {
         console.log('menue', response);
